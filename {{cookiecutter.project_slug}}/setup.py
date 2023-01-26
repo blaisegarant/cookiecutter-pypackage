@@ -11,6 +11,8 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [{%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',{%- endif %} ]
+if requirements is None:
+    print("not ok")
 
 test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest>=3',{%- endif %} ]
 
